@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: banner-python-blog
+# key: /pyban
+# --
+[cbanner code=DPREP]
+[cbanner code=PNLP]
+[cbanner code=VISI]
+[cbanner code=PYNN]
+[cbanner code=PYML]
+[cbanner code=MLOPS]
