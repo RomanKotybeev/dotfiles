@@ -1,0 +1,21 @@
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+    family: Iosevka SS08
+    style: regular
+
+  bold:
+    family: Iosevka SS08
+    style: bold
+
+  italic:
+    family: Iosevka SS08
+    style: "Light Italic"
+
+  size: 11.5
+
+  offset:
+    x: 0 # between letters
+    y: 3 # line spacing
+

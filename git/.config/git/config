@@ -1,0 +1,13 @@
+[user]
+	email = favorshlitex at gmail dot com
+	name = Roman Kotyubeev
+[init]
+	defaultBranch = main
+[credential "https://gitlab.yac.cloud-effem.com"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
+[alias]
+    st = status
+    ch = checkout
+    p = pull
+    P = push

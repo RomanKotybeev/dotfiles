@@ -1,0 +1,12 @@
+#!/bin/sh
+
+feh --bg-scale --no-fehbg $XDG_CONFIG_HOME/wallpapers/*
+setxkbmap us,ru -option grp:caps_toggle -print | xkbcomp - $DISPLAY &
+#picom -b
+#xsetroot -solid '#000000' &
+#dwmblocks &
+xrdb -load $XDG_CONFIG_HOME/X11/darkxres &
+#xrandr --output HDMI1 --mode 1920x1080 --output eDP1 --off &
+#xrandr --output HDMI1 --auto --left-of eDP1
+exec dbus-launch $WM
+#exec startplasma-x11

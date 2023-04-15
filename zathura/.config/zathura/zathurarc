@@ -1,0 +1,42 @@
+# Base16 Black Metal (Dark Funeral)
+# Author: metalelf0 (https://github.com/metalelf0)
+
+set default-bg                  "#171717"
+set default-fg                  "#121212"
+
+set statusbar-fg                "#999999"
+set statusbar-bg                "#171717"
+
+set inputbar-bg                 "#000000"
+set inputbar-fg                 "#c6c6c6"
+
+set notification-bg             "#000000"
+set notification-fg             "#c1c1c1"
+
+set notification-error-bg       "#000000"
+set notification-error-fg       "#5f8787"
+
+set notification-warning-bg     "#000000"
+set notification-warning-fg     "#5f8787"
+
+set highlight-color             "#5f81a5"
+set highlight-active-color      "#888888"
+
+set completion-bg               "#171717"
+set completion-fg               "#c6c6c6"
+
+set completion-highlight-fg     "#c6c6c6"
+set completion-highlight-bg     "#3a3a3a"
+
+set recolor-lightcolor          "#002b36"
+set recolor-darkcolor           "#999999"
+
+
+map e scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+map [fullscreen] e scroll half-up
+map [fullscreen] d scroll half-down
