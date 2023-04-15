@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+	"modules-left": ["wlr/workspaces", "hyprland/window"],
+    "modules-right": [
+		"hyprland/language",
+		"pulseaudio",
+		"network",
+		"memory",
+		"battery",
+		"clock"
+	],
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+	"clock": {
+		"format-alt": " {:%a %b %d}",
+		"format": " {:%H:%M}",
+	},
+	"memory": {
+		"interval": 30,
+		"format": " {used:0.1f}G"
+	},
+	"network": {
+		"format-wifi": "直{essid}",
+		"format-ethernet": " {cidr}",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "睊",
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}%  {format_source}",
+		"format-bluetooth-muted": "婢 ",
+		"format-muted": "婢",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"hyprland/submap": {
+		"format": "✌️ {}",
+		"max-length": 8,
+		"tooltip": false
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"separate-outputs": true,
+		"max-length": 50,
+		"rewrite": {
+			"(.*) - Mozilla Firefox": "🌎 $1",
+			"(.*) - vim": " $1",
+			"(.*) - zsh": " [$1]"
+		}
+	},
+	"hyprland/language": {
+		"format": "{}",
+		"format-ru": "RU",
+		"format-en": "EN",
+	},
+	"wlr/workspaces": {
+		"on-click": "activate",
+		"format": "{name}"
+	}
+}
