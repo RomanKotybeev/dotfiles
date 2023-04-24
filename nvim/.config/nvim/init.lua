@@ -1,6 +1,6 @@
 require('packercfg')
 require('neovide')
-require('barbar')
+require('mybarbar')
 require('luasnip.loaders.from_lua').lazy_load()
 
 ------------ System --------------------
