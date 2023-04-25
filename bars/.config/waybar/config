@@ -4,11 +4,17 @@
     "modules-right": [
 		"hyprland/language",
 		"pulseaudio",
+        "backlight",
 		"network",
 		"memory",
 		"battery",
 		"clock"
 	],
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
     "battery": {
         "format": "{icon}  {capacity}%",
         "format-icons": ["", "", "", "", ""]
