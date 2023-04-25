@@ -6,6 +6,7 @@ zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 bindkey -e
 
 HISTSIZE=10000
+HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
 SAVEHIST=10000
 setopt appendhistory
 
