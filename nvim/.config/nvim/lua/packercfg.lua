@@ -2,10 +2,6 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Appereance
     use 'ntk148v/komau.vim'
-    use {
-        "phha/zenburn.nvim",
-        config = function() require("zenburn").setup() end
-    }
     use 'EdenEast/nightfox.nvim'
     use 'pgdouyon/vim-yin-yang'
     use 'sainnhe/everforest'
@@ -13,12 +9,9 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     }
-	use 'RRethy/nvim-base16'
     use 'ellisonleao/gruvbox.nvim'
     use 'folke/tokyonight.nvim'
-    use 'axvr/photon.vim'
     use 'svrana/neosolarized.nvim'
-    use 'ayu-theme/ayu-vim'
     use 'rakr/vim-one'
     use 'catppuccin/nvim'
     use 'tjdevries/colorbuddy.nvim'
@@ -29,8 +22,6 @@ return require('packer').startup(function(use)
     }
     use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'karb94/neoscroll.nvim'
-
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -54,9 +45,6 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'kylechui/nvim-surround'
     use 'tpope/vim-rsi'
-
-    -- Programming languages
-    use 'psf/black'
 
     -- Git
     use 'kdheepak/lazygit.nvim'
