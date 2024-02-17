@@ -33,3 +33,13 @@ st.foreground: #d1e5e3
 ! LightGrey + White
 *color7:  #ced5e0
 *color15: #d6dae0
+
+Xft.dpi: 144
+
+! These might also be useful depending on your monitor and personal preference:
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
