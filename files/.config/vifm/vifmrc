@@ -507,7 +507,7 @@ nnoremap <c-u> <c-w>x
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
-let suffix=expand('%:e') 
+" let suffix=expand('%:e') 
 nmap <F2> :!feh --bg-scale --no-fehbg %f && rm $XDG_CONFIG_HOME/wallpapers/* && cp %f $XDG_CONFIG_HOME/wallpapers/wall.%f:e<CR>
 set number 
 

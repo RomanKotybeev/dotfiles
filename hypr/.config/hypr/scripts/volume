@@ -3,7 +3,7 @@
 down() {
 	pamixer -d 2
 	volume=$(pamixer --get-volume)
-	[$volume -gt 0 ] && volume=`expr $volume`  
+	[ $volume -gt 0 ] && volume=`expr $volume`  
 }
 
 up() {

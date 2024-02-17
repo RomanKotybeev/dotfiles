@@ -255,3 +255,4 @@ require('gitsigns').setup()
 
 vim.opt.list = true
 vim.opt.listchars:append({ trail = '⋅', extends = '⟩', precedes = '⟨' })
+require('leap').add_default_mappings()

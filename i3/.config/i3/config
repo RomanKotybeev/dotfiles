@@ -170,7 +170,7 @@ for_window [class="dropdown"] move scratchpad
 for_window [class="dropdown"] border pixel 2
 
 exec --no-startup-id $term --class dropdown
-exec_always --no-startup-id $XDG_CONFIG_HOME/polybar/grayblocks/launch.sh
+exec_always --no-startup-id polybar
 
 bindsym $mod+b exec polybar-msg cmd toggle
 bindsym $mod+shift+p exec systemctl poweroff -i

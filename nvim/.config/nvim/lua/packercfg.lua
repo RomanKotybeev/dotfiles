@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     }
     use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'ribru17/bamboo.nvim'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -45,6 +46,7 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'kylechui/nvim-surround'
     use 'tpope/vim-rsi'
+    use 'ggandor/leap.nvim'
 
     -- Git
     use 'kdheepak/lazygit.nvim'
