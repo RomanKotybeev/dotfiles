@@ -1,6 +1,6 @@
 {
     "layer": "top",
-	"modules-left": ["wlr/workspaces", "hyprland/window"],
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-right": [
 		"hyprland/language",
 		"pulseaudio",
@@ -71,7 +71,7 @@
 		"format-ru": "RU",
 		"format-en": "EN",
 	},
-	"wlr/workspaces": {
+	"hyprland/workspaces": {
 		"on-click": "activate",
 		"format": "{name}"
 	}

@@ -18,5 +18,5 @@ alias v=nvim
 alias bc="bc -ql"
 alias l=ls
 alias ll="ls -l"
-alias la="ll - a"
+alias la="ls -la"
 alias hx=helix
