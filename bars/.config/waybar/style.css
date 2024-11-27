@@ -1,95 +1,106 @@
 * {
+    all: unset;
     font-family: "DaddyTimeMono Nerd Font";
-    font-size: 15px;
-    min-height: 15px;
+    min-width: 36px;
 }
 
-#window {
-    padding-left: 10px;
-    padding-right: 10px;
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+tooltip {
+    background-color: #122114;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
+    color: #d6f5f0;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
 }
 
+/* ------------------------------ Hyprland ------------------------------ */
 #workspaces {
-	background-color: transparent;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#workspaces button {
+    border: solid 1px #d6f5f0;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+#workspaces button label {
+    color: #d6f5f0;
+    font-size: 14px;
+    font-weight: bold;
+}
+#workspaces button.active {
+    background-color: #d6f5f0;
+}
+#workspaces button.active label {
+    color: #233c2a;
+}
+#language {
+    margin: 8px 0 0 0;
+    font-weight: bold;
+}
+
+/* ------------------------------ Clock ------------------------------ */
+#clock {
+    background-color: #122114;
+    border: 1px solid alpha(#d6f5f0, 0.4);
+    border-radius: 2px;
+    padding: 4px 0 4px 0;
+    margin: 5px;
+}
+
+/* ------------------------------ System ------------------------------ */
+#battery, #memory, #network, #pulseaudio, #language, #backlight {
+    padding-bottom: 6px;
+}
+#battery.warning {
+    color: #ffe599;
+}
+#battery.critical {
+    color: red;
+    animation: blinker 1.5s linear infinite;
+}
+#tray {
+    padding: 5px;
+    margin-right: 3px;
+}
+
+/*
+#workspaces > button.empty {
+    border-color: alpha(#d6f5f0, 0);
+}
+#workspaces > button.empty > label {
+    color: alpha(#d6f5f0, 0.4);
+}
+*/
+/*
+#workspaces button {
+    border: solid 1px #d6f5f0;
+    border-radius: 2px;
+	transition: all 0.3s ease;
 }
 
 #workspaces button label {
 	color: rgb(180, 190, 254);
 }
 
+#workspaces button.active {
+	box-shadow: rgba(0, 0, 0, 0.288);
+	background-color: rgb(203, 166, 247);
+	background-size: 300% 300%;
+	animation: colored-gradient 10s ease infinite;
+	transition: all 0.3s ease;
+}
+
 #workspaces button.active label {
 	color: rgba(30, 30, 46, 0.6);
 	font-weight: bolder;
 }
-
-#workspaces button {
-	box-shadow: rgba(17, 17, 27, 0.2);
-	background-color: rgba(30, 30, 46, 0.6);
-	transition: all 0.3s ease;
-}
-
-#workspaces button.active {
-	box-shadow: rgba(0, 0, 0, 0.288);
-	background-color: rgb(203, 166, 247);
-	transition: all 0.3s ease;
-	background-size: 300% 300%;
-	animation: colored-gradient 10s ease infinite;
-}
-
-#clock, #battery, #memory, #network, #pulseaudio, #language, #backlight {
-    padding: 0 10px;
-}
-
-#clock {
-    background-color: #64727D;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: black;
-}
-
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
-}
-
-#memory {
-	background: #64667D;
-}
-
-#backlight {
-	background: #504d61;
-}
-
-#network {
-    color: white;
-	background: #4d5861;
-}
-
-#pulseaudio {
-    color: black;
-	background: #99a5ae;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+*/
