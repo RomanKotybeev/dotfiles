@@ -1,78 +1,98 @@
 {
     "layer": "top",
-	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "position": "left",
+    "modules-left": ["hyprland/language", "hyprland/workspaces"],
+    "modules-center": ["clock"],
     "modules-right": [
-		"hyprland/language",
-		"pulseaudio",
+        "pulseaudio",
         "backlight",
-		"network",
-		"memory",
-		"battery",
-		"clock"
-	],
+        "network",
+        "memory",
+        "battery",
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-ru": "RUS",
+        "format-en": "ENG",
+    },
+    "clock": {
+        "format-alt": "{:%d\n%m\n%y}",
+        "format": "{:%H\n<span size='3pt'> </span><span size='medium'></span>\n%M}",
+        "tooltip-format": "<span bgcolor='#122114' size='10pt' face='Iosevka SS08'>{calendar}</span>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "today": "<span color='#EAEA99'><b>{}</b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", ""]
+        "format": "<span size='large'>{icon}</span><span size='8pt'> </span>",
+        "format-icons": ["󰃝", "󰃞", "󰃟", "󰃠"],
     },
     "battery": {
-        "format": "{icon}  {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span size='11pt'>{icon}</span><span size='8pt'> </span>",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{capacity}% {timeTo}"
     },
-	"clock": {
-		"format-alt": " {:%a %b %d}",
-		"format": " {:%H:%M}",
-	},
-	"memory": {
-		"interval": 30,
-		"format": " {used:0.1f}G"
-	},
-	"network": {
-		"format-wifi": " {essid}",
-		"format-ethernet": " {cidr}",
-		"tooltip-format": "{ifname} via {gwaddr}",
-		"format-linked": "{ifname} (No IP)",
-		"format-disconnected": "睊",
-	},
-	"pulseaudio": {
-		// "scroll-step": 1, // %, can be a float
-		"format": "{icon} {volume}%",
-		"format-bluetooth": "{volume}%  {format_source}",
-		"format-bluetooth-muted": "婢 ",
-		"format-muted": "婢",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", "", ""]
-		},
-		"on-click": "pavucontrol"
-	},
-	"hyprland/submap": {
-		"format": "✌️ {}",
-		"max-length": 8,
-		"tooltip": false
-	},
-	"hyprland/window": {
-		"format": "{}",
-		"separate-outputs": true,
-		"max-length": 50,
-		"rewrite": {
-			"(.*) - Mozilla Firefox": "🌎 $1",
-			"(.*) - vim": " $1",
-			"(.*) - zsh": " [$1]"
-		}
-	},
-	"hyprland/language": {
-		"format": "{}",
-		"format-ru": "RU",
-		"format-en": "EN",
-	},
-	"hyprland/workspaces": {
-		"on-click": "activate",
-		"format": "{name}"
-	}
+    "memory": {
+        "interval": 60,
+        "format": "<span size='4pt'> </span><span size='14pt'>󰍛</span><span size='8pt'> </span>",
+        "tooltip-format": "Used RAM: {used:0.1f}G"
+    },
+    "network": {
+        "format-wifi": "󰤨<span size='7pt'> </span>",
+        "format-ethernet": " <span size='7pt'> </span>",
+        "format-disconnected": "󰤭<span size='7pt'> </span>",
+        "format-icons": [
+            "󰤩<span size='7pt'> </span>",
+            "󰤢<span size='7pt'> </span>",
+            "󰤥<span size='7pt'> </span>",
+            "󰤨<span size='7pt'> </span>",
+        ],
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "iwctl"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "<span size='15pt'>󰂯</span>",
+        "format-bluetooth-muted": "<span size='15pt'>󰂲</span>",
+        "format-muted": "<span size='13pt'>󰖁</span>",
+        "format-icons": {
+            "headphone": "<span size='13pt'></span><span size='7pt'> </span>",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "<span size='12pt'></span><span size='4pt'> </span>",
+                "<span size='12pt'></span><span size='5pt'> </span>",
+            ]
+        },
+        "tooltip-format": "{desc}: {volume}%",
+        "on-click": "pamixer -t"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 3
+    }
 }
