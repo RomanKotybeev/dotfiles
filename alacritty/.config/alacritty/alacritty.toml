@@ -1,0 +1,14 @@
+
+[font]
+size = 12
+
+[font.normal]
+family = "DaddyTimeMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 3
+
+[general]
+import = ["/home/roman/.config/alacritty/themes/catppuccin-mocha.toml"]
