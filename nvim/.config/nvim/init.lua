@@ -2,17 +2,20 @@ require("config.lazy")
 
 vim.g.mapleader = " "
 vim.o.clipboard = "unnamedplus"
-vim.cmd('filetype indent on')
+vim.o.smartcase = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
 
 vim.opt.undofile = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.termguicolors = true
-
 vim.opt.hlsearch = false
-vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
 
+vim.cmd("filetype indent on")
+vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
 vim.cmd.colorscheme "catppuccin"
+
 -- =========================== Mappings =========================== 
 local s = vim.keymap.set
 s("i", "kj", "<ESC>", {desc = "Normal mode"})
