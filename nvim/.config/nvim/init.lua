@@ -3,6 +3,7 @@ require("config.lazy")
 vim.g.mapleader = " "
 vim.o.clipboard = "unnamedplus"
 vim.o.smartcase = true
+vim.o.ignorecase = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 
@@ -27,7 +28,9 @@ s("n", "]<leader>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", {silent = true, 
 s("n", "[<leader>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", {silent = true, desc = "New forward line"})
 
 
+local sev = vim.diagnostic.severity
 vim.diagnostic.config {
+  signs = { text = { [sev.ERROR] = "󰅙", [sev.WARN] = "", [sev.INFO] = "󰋼", [sev.HINT] = "󰌵" } },
   float = {
     header = false,
     border = "rounded",
