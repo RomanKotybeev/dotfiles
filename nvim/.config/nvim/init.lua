@@ -7,10 +7,12 @@ vim.cmd('filetype indent on')
 vim.opt.undofile = true
 vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.termguicolors = true
 
 vim.opt.hlsearch = false
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
 
+vim.cmd.colorscheme "catppuccin"
 -- =========================== Mappings =========================== 
 local s = vim.keymap.set
 s("i", "kj", "<ESC>", {desc = "Normal mode"})
@@ -23,11 +25,6 @@ s("n", "[<leader>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", {silent = true, 
 
 
 vim.diagnostic.config {
-  -- signs = true,
-  -- underline = true,
-  -- virtual_text = false,
-  -- virtual_lines = false,
-  -- update_in_insert = true,
   float = {
     header = false,
     border = "rounded",
