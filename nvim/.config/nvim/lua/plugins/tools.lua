@@ -27,12 +27,17 @@ return {
         },
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          -- { name = "luasnip" }, -- For luasnip users.
+          { name = "luasnip" },
         }, {
           { name = "buffer" },
         }),
       })
     end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    config = function(_, opts) require'lsp_signature'.setup(opts) end
   },
   -- =========================== END ==============================
   -- ======================= NVIM FORMATTER =======================

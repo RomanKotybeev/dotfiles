@@ -30,24 +30,20 @@ return {
             end
           end)
 
-          -- Actions
-          map('n', '<leader>gs', gitsigns.stage_hunk)
-          map('n', '<leader>gr', gitsigns.reset_hunk)
-          map('n', '<leader>gS', gitsigns.stage_buffer)
-          map('n', '<leader>gu', gitsigns.undo_stage_hunk)
-          map('n', '<leader>gR', gitsigns.reset_buffer)
-          map('n', '<leader>gp', gitsigns.preview_hunk)
-          map('n', '<leader>gb', function() gitsigns.blame_line{full=true} end)
-          map('n', '<leader>gt', gitsigns.toggle_current_line_blame)
-          map('n', '<leader>gd', gitsigns.diffthis)
-          map('n', '<leader>gD', function() gitsigns.diffthis('~') end)
-          map('n', '<leader>ge', gitsigns.toggle_deleted)
-
-          -- Text object
-          map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-        end
+          map('n', '<leader>gs', gitsigns.stage_hunk, {desc = "Gitsigns stage hunk"})
+          map('n', '<leader>gr', gitsigns.reset_hunk, {desc = "Gitsigns reset hunk"})
+          map('n', '<leader>gS', gitsigns.stage_buffer, {desc = "Gitsigns stage buffer"})
+          map('n', '<leader>gu', gitsigns.undo_stage_hunk, {desc = "Gitsigns undo stage hunk"})
+          map('n', '<leader>gR', gitsigns.reset_buffer, {desc = "Gitsigns reset buffer"})
+          map('n', '<leader>gp', gitsigns.preview_hunk, {desc = "Gitsigns preview hunk"})
+          map('n', '<leader>gP', gitsigns.preview_hunk_inline, {desc = "Gitsigns preview hunk inline"})
+          map('n', '<leader>gb', function() gitsigns.blame_line{full=true} end, {desc = "Gitsigns blame line"})
+          map('n', '<leader>gt', gitsigns.toggle_current_line_blame, {desc = "Gitsigns toggle blame"})
+          map('n', '<leader>gd', gitsigns.diffthis, {desc = "Gitsigns diff"})
+          map('n', '<leader>ge', gitsigns.toggle_deleted, {desc = "Gitsigns show deleted"})
+        end,
       })
-    end
+    end,
   },
   -- =========================== END ==============================
   -- ========================= LazyGit ============================

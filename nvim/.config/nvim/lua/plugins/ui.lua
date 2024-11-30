@@ -46,7 +46,6 @@ return {
       highlight = { enable = true },
       indent = {
         enable = true,
-        disable = { "python" }
       },
       ensure_installed = {
         "python",
@@ -77,35 +76,12 @@ return {
     opts = {},
     cmd = "Trouble",
     keys = {
-      {
-        "<leader>dT",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>dt",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      }, {
-        "<leader>ds",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>dS",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>dl",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>dq",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
+      {"<leader>dT", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)"},
+      {"<leader>dt", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+      {"<leader>ds", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)"},
+      {"<leader>dl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)"},
+      {"<leader>dq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)"},
+      {"<leader>do", vim.diagnostic.open_float, desc = "Diagnostics open float"}
     },
   },
   -- =========================== END ==============================
@@ -115,32 +91,22 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function(_, opts)
       local ll = require("lualine")
+      theme = require('lualine.themes.catppuccin')
       ll.setup({
         options = {
           icons_enabled = true,
-          theme = "nightfly",
-          component_separators = { left = "", right = ""},
-          section_separators = { left = "", right = ""},
-          disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-          },
-          ignore_focus = {},
-          always_divide_middle = true,
-          always_show_tabline = true,
-          globalstatus = false,
-          refresh = {
-            statusline = 100,
-            tabline = 100,
-            winbar = 100,
-          }
+          theme = "catppuccin",
+          component_separators = { },
+          section_separators = { },
         },
         sections = {
           lualine_a = {"mode"},
           lualine_b = {"branch", "diff", "diagnostics"},
           lualine_c = {"filename"},
-          lualine_x = {"filetype"},
-          lualine_y = {},
+          lualine_x = {},
+          lualine_y = { 
+              {"[[ ]] .. vim.fn.expand('%:p:h:t')",  color = { bg = theme.normal.fg }},
+          },
           lualine_z = {"location"}
         },
         inactive_sections = {
@@ -151,10 +117,6 @@ return {
           lualine_y = {},
           lualine_z = {}
         },
-        tabline = {},
-        winbar = {},
-        inactive_winbar = {},
-        extensions = {}
       })
     end,
   },
