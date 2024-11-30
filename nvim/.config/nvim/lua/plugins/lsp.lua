@@ -6,18 +6,23 @@ return {
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(ev)
-        local opts = { buffer = ev.buf }
-        local s = vim.keymap.set
-        s("n", "K", vim.lsp.buf.hover, opts)
-        s("n", "gK", vim.lsp.buf.signature_help, opts)
-        s("n", "gD", vim.lsp.buf.declaration, opts)
-        s("n", "gd", vim.lsp.buf.definition, opts)
-        s("n", "gi", vim.lsp.buf.implementation, opts)
-        s("n", "gy", vim.lsp.buf.type_definition, opts)
-        s("n", "gr", vim.lsp.buf.references, opts)
-        s("n", "<leader>do", vim.diagnostic.open_float, opts)
-        s("n", "<leader>cr", vim.lsp.buf.rename, opts)
-        s("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        local function opts(desc)
+          return { buffer = ev.bufnr, desc = "LSP " .. desc }
+        end
+        local map = vim.keymap.set
+        map("n", "K", vim.lsp.buf.hover, opts "hover" )
+        map("n", "gK", vim.lsp.buf.signature_help, opts "signature help")
+        map("n", "gD", vim.lsp.buf.declaration, opts "go to declaration")
+        map("n", "gd", vim.lsp.buf.definition, opts "go to definition")
+        map("n", "gi", vim.lsp.buf.implementation, opts "go to implementation")
+        map("n", "gy", vim.lsp.buf.type_definition, opts "go to type definiton")
+        map("n", "gr", vim.lsp.buf.references, opts "go to references")
+        map("n", "<leader>cr", vim.lsp.buf.rename, opts "rename")
+        map("n", "<leader>ca", vim.lsp.buf.code_action, opts "code action")
+
+        require("lsp_signature").on_attach({
+          -- ... setup options here ...
+        }, ev.bufnr)
       end,
     })
 
