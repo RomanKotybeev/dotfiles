@@ -63,10 +63,9 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    --event = "User FilePost",
     opts = {
       indent = { char = "│" },
-      scope = { char = "│" },
+      scope = { char = "│", highlight = {"NonText"} },
     },
   },
   -- =========================== END ==============================
@@ -101,7 +100,9 @@ return {
         },
         sections = {
           lualine_a = {"mode"},
-          lualine_b = {"branch", "diff", "diagnostics"},
+          lualine_b = {
+            "branch", "diff", "diagnostics"
+          },
           lualine_c = {"filename"},
           lualine_x = {},
           lualine_y = { 

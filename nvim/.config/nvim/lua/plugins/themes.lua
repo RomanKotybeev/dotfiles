@@ -8,10 +8,10 @@ return {
     priority = 1000,
     config = function(_, opts)
       require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        flavour = "frappe", -- latte, frappe, macchiato, mocha
         background = {
           light = "latte",
-          dark = "macchiato",
+          dark = "frappe",
         },
         styles = {
           comments = {},
@@ -27,6 +27,11 @@ return {
             enabled = false,
             colored_indent_levels = false,
           },
+        },
+        dim_inactive = {
+          enabled = true, -- dims the background color of inactive window
+          shade = "dark",
+          percentage = 0.15, -- percentage of the shade to apply to the inactive window
         },
         custom_highlights = function(colors)
           return {
