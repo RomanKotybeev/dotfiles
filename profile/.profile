@@ -76,7 +76,7 @@ PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
 #. $HOME/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-	exec Hyprland
+	start-hyprland
 fi
 
 if [ "$(tty)" = "/dev/tty2" ]; then
