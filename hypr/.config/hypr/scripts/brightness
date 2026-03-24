@@ -3,11 +3,11 @@
 CURRENT=$(brightnessctl g)
 
 down() {
-	brightnessctl s $(($CURRENT - 10))
+	brightnessctl s 10%-
 }
 
 up() {
-	brightnessctl s $(($CURRENT + 10))
+	brightnessctl s +10%
 	#dunstify -a "BRIGHTNESS" "Increasini to $brightness%" -h int:value:"$brightness" -i ~/.config/dunst/assets/ui/brightness-high.svg -r 2593 -u normal
 }
 
