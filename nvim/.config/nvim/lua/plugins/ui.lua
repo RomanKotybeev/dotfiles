@@ -46,6 +46,7 @@ return {
       highlight = { enable = true },
       indent = {
         enable = true,
+        disable = { "python" }
       },
       ensure_installed = {
         "python",
@@ -80,7 +81,7 @@ return {
       {"<leader>ds", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)"},
       {"<leader>dl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)"},
       {"<leader>dq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)"},
-      {"<leader>do", vim.diagnostic.open_float, desc = "Diagnostics open float"}
+      {"<leader>do", vim.diagnostic.open_float, desc = "Diagnostics open float (Trouble)"}
     },
   },
   -- =========================== END ==============================
@@ -90,11 +91,11 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function(_, opts)
       local ll = require("lualine")
-      theme = require('lualine.themes.catppuccin')
+      theme = require('lualine.themes.gruvbox')
       ll.setup({
         options = {
           icons_enabled = true,
-          theme = "catppuccin",
+          theme = "auto",
           component_separators = { },
           section_separators = { },
         },

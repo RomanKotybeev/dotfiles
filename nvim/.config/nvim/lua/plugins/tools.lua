@@ -1,45 +1,4 @@
 return {
-  -- ====================== NVIM COMPLETION ====================== 
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-    },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          },
-        }),
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-        }, {
-          { name = "buffer" },
-        }),
-      })
-    end,
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    config = function(_, opts) require'lsp_signature'.setup(opts) end
-  },
-  -- =========================== END ==============================
   -- ======================= NVIM FORMATTER =======================
   {
     "stevearc/conform.nvim",
@@ -90,9 +49,6 @@ return {
     },
     config = function(_, opts)
       require("nvim-autopairs").setup(opts)
-
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
   -- ========================= SURROUND ===========================
