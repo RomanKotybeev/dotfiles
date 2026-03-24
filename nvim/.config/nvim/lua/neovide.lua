@@ -1,3 +1,4 @@
+if not vim.g.neovide then return end
 vim.cmd([[
     let g:neovide_scale_factor=1.0
     function! ChangeScaleFactor(delta)
