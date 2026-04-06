@@ -11,4 +11,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.lsp.enable({"pyright"})
+vim.lsp.enable({"pyright", "clang"})

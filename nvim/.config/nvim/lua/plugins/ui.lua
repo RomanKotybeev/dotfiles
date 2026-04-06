@@ -123,36 +123,4 @@ return {
     end,
   },
   -- =========================== END ==============================
-  -- ========================== BARBAR ============================
-  {
-    "romgrk/barbar.nvim",
-    dependencies = {
-      "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
-      "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
-    },
-    init = function() vim.g.barbar_auto_setup = true end,
-    config = function()
-      local default_opts = { noremap = true, silent = true }
-      local function map(mode, lhs, rhs, desc)
-        vim.api.nvim_set_keymap(mode, lhs, rhs, vim.tbl_extend("force", default_opts, { desc = desc }))
-      end
-      map("n", "<A-j>", "<Cmd>BufferPrevious<CR>", "Bar previous")
-      map("n", "<A-k>", "<Cmd>BufferNext<CR>", "Bar next")
-      map("n", "<A-J>", "<Cmd>BufferMovePrevious<CR>", "Bar move previous")
-      map("n", "<A-K>", "<Cmd>BufferMoveNext<CR>", "Bar move next")
-      map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", "Bar goto 1")
-      map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", "Bar goto 2")
-      map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", "Bar goto 3")
-      map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", "Bar goto 4")
-      map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", "Bar goto 5")
-      map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", "Bar goto 6")
-      map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", "Bar goto 7")
-      map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", "Bar goto 8")
-      map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", "Bar goto 9")
-      map("n", "<A-0>", "<Cmd>BufferLast<CR>", "Bar goto last")
-      map("n", "<A-p>", "<Cmd>BufferPin<CR>", "Bar pin")
-      map("n", "<A-q>", "<Cmd>BufferClose<CR>", "Bar close")
-    end,
-  },
-  -- =========================== END ==============================
 }
