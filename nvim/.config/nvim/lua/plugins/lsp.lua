@@ -1,10 +1,10 @@
 return {
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    branch = "master",
-    config = function(_, opts) require'lsp_signature'.setup(opts) end
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   branch = "master",
+  --   config = function(_, opts) require'lsp_signature'.setup(opts) end
+  -- },
   {
     "saghen/blink.cmp",
     version = "*", -- use latest release, important for prebuilt binaries

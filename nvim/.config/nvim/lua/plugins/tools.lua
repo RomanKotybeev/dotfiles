@@ -24,6 +24,8 @@ return {
     opts = {
       formatters_by_ft = {
         python = { "ruff_fix", "black", },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
       },
       default_format_opts = {
         lsp_format = "fallback",
