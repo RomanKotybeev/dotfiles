@@ -1,5 +1,6 @@
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "default"
+require("vim._core.ui2").enable()
 
 local sev = vim.diagnostic.severity
 vim.diagnostic.config {
@@ -10,4 +11,3 @@ vim.diagnostic.config {
     focusable = true,
   }
 }
-

@@ -1,5 +1,6 @@
 require("config.lazy")
 require("config.options")
 require("config.global_keymaps")
+require('config.statusline')
 require("config.autocmds")
 require("config.visuals")
