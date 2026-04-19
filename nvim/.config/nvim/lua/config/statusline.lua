@@ -121,10 +121,7 @@ end
 
 function M.statusline_inactive()
   return table.concat({
-    '%#StatusLineNC#',
-    '%=',
-    ' ' .. vim.fn.expand('%:t') .. ' ',
-    '%=',
+    '%#StatusLineNC# ' .. filename(),
   })
 end
 
