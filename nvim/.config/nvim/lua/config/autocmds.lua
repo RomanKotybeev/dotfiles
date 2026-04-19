@@ -49,6 +49,6 @@ vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter' }, {
 
 vim.api.nvim_create_autocmd({ 'WinLeave', 'BufLeave' }, {
   callback = function()
-    vim.o.statusline = "%!v:lua.require'config.statusline'.statusline_inactive()"
+    vim.wo.statusline = "%!v:lua.require'config.statusline'.statusline_inactive()"
   end,
 })
