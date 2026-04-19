@@ -3,7 +3,8 @@
 size = 12
 
 [font.normal]
-family = "DaddyTimeMono Nerd Font"
+#family = "DaddyTimeMono Patched"
+family = "Annotation Mono"
 style = "Regular"
 
 [font.offset]
@@ -11,4 +12,9 @@ x = 0
 y = 3
 
 [general]
-import = ["/home/roman/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = ["themes/catppuccin-mocha.toml"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
