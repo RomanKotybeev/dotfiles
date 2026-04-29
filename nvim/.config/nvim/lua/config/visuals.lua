@@ -1,5 +1,5 @@
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
-vim.cmd.colorscheme "default"
+vim.cmd.colorscheme "mytheme"
 require("vim._core.ui2").enable()
 
 local sev = vim.diagnostic.severity
