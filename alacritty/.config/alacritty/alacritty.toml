@@ -12,7 +12,7 @@ x = 0
 y = 3
 
 [general]
-import = ["themes/catppuccin-mocha.toml"]
+import = ["themes/atheme.toml"]
 
 [[keyboard.bindings]]
 key = "Return"
