@@ -119,9 +119,16 @@ function M.statusline()
   })
 end
 
-function M.statusline_inactive()
+local function filename_for_win(winid)
+  local bufnr = vim.api.nvim_win_get_buf(winid)
+  local name = vim.api.nvim_buf_get_name(bufnr)
+  local modified = vim.api.nvim_buf_get_option(bufnr, 'modified') and ' [+]' or ''
+  return (name ~= '' and vim.fn.fnamemodify(name, ':t') or '[No Name]') .. modified
+end
+
+function M.statusline_inactive(winid)
   return table.concat({
-    '%#StatusLineNC# ' .. filename(),
+    '%#StatusLineNC# ' .. filename_for_win(winid),
   })
 end
 
