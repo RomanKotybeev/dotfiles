@@ -3,7 +3,7 @@
 size = 12
 
 [font.normal]
-#family = "DaddyTimeMono Patched"
+#family = "DaddyTimeMono"
 family = "Annotation Mono"
 style = "Regular"
 
