@@ -15,7 +15,7 @@ return {
       require('telescope').setup({
         defaults = {
           file_ignore_patterns = {
-            "%.jpg", "%.png", "%.pdf", "%.zip"
+            "%.jpg", "%.png", "%.pdf", "%.zip", "%.o"
           },
           prompt_prefix = "   ",
           selection_caret = " ",
