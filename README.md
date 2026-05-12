@@ -19,3 +19,60 @@ To link everything:
 ```bash
 stow -R -v -t ~ .
 ```
+
+## X11 inputs
+Modify `/etc/X11/xorg.conf.d/40-libinput.conf`. It allows to "tap"
+the pad to click instead of physically pressing the button down and
+sets the finger-count behavior and sets the finger-count behavior:
+1 finger = Left click, 2 fingers = Middle click, 3 fingers = Right click.
+
+```
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+	Option "Tapping" "on"
+	Option "TappingButtonMap" "lmr"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+EndSection
+```
+
+Modify `/etc/X11/xorg.conf.d/20-3rdbutton.conf` to allow use middle mouse
+button for pasting the selection.
+
+```
+Section "InputClass"
+	Identifier "middle button"
+	MatchIsPointer "on"
+	MatchDriver "libinput"
+    Option "MiddleEmulation" "on"
+EndSection
+```
+
+## Install programs
+Default for now:
+```
+pacman -S --needed \
+alacritty \
+neovim \
+vim \
+zsh \
+i3 \
+dunst \
+git \
+tumux \
+zathura \
+vifm \
+ttf-daddytime-mono-nerd \
+mpv \
+nsxiv \
+firefox \
+flameshot \
+lazygit \
+```
+
+## Useful links
+
+Annotation mono font:
+https://qwerasd205.github.io/AnnotationMono/
+
