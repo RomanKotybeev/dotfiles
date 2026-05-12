@@ -1,0 +1,6 @@
+#!/bin/sh
+
+hyprctl clients | awk '
+/^\tworkspace:/ { ws = $2; if (!seen[ws]++) print "#" ws }
+/^\tclass:/ { print "- " $2 }
+'

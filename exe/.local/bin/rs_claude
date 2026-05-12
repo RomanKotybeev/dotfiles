@@ -1,0 +1,28 @@
+#!/bin/bash
+# ~/bin/agent
+
+WORKSPACE="$HOME/texts/ai_work"
+CURRENT=$(pwd)
+
+# Get path relative to workspace root
+REL="${CURRENT#$WORKSPACE}"
+SANDBOX_DIR="/workspace${REL}"
+
+exec bwrap \
+  --ro-bind /usr /usr \
+  --ro-bind /bin /bin \
+  --ro-bind /lib /lib \
+  --ro-bind /lib64 /lib64 \
+  --ro-bind ~/.local /home/roman/.local \
+  --bind ~/.claude /home/roman/.claude \
+  --ro-bind /etc/resolv.conf /etc/resolv.conf \
+  --ro-bind /etc/ssl /etc/ssl \
+  --bind ~/texts/ai_work /workspace \
+  --proc /proc \
+  --dev /dev \
+  --tmpfs /tmp \
+  --unshare-all \
+  --share-net \
+  --setenv HOME /workspace \
+  --chdir "$SANDBOX_DIR" \
+  /home/roman/.local/bin/claude "$@"
