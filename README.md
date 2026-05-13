@@ -69,6 +69,22 @@ nsxiv \
 firefox \
 flameshot \
 lazygit \
+pass \
+```
+
+## Some configs
+Add an option to mount without root. Modify /etc/fstab:
+
+```
+/dev/sdX1  /mnt/flash  vfat  noauto,users,uid=1000,gid=1000,dmask=022,fmask=133  0  0
+```
+
+Then you can mount easily:
+
+```bash
+mount /mnt/flash
+umount /mnt/flash
+sync
 ```
 
 ## Useful links
