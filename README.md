@@ -17,7 +17,7 @@ stow -R -v -t ~ htop
 To link everything:
 
 ```bash
-stow -R -v -t ~ .
+stow -R -v -t ~ /*
 ```
 
 ## X11 inputs
@@ -60,7 +60,7 @@ zsh \
 i3 \
 dunst \
 git \
-tumux \
+tmux \
 zathura \
 vifm \
 ttf-daddytime-mono-nerd \
@@ -69,7 +69,7 @@ nsxiv \
 firefox \
 flameshot \
 lazygit \
-pass \
+pass
 ```
 
 ## Some configs

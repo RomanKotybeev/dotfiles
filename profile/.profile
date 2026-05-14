@@ -76,9 +76,5 @@ PATH="$HOME/.local/bin:/usr/sbin:/sbin:$PATH"
 #. $HOME/.bashrc
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-	start-hyprland
-fi
-
-if [ "$(tty)" = "/dev/tty2" ]; then
 	startx $XINITRC
 fi

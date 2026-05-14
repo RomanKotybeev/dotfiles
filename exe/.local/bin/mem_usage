@@ -1,0 +1,4 @@
+#!/bin/sh
+ps aux --sort=-%mem | \
+awk '{mem[$11]+=$6} END {for (app in mem) printf "%.0f MB %s\n", mem[app]/1024, app}' | \
+sort -rn | head -20
