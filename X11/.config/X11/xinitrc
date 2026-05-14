@@ -6,4 +6,8 @@ setxkbmap us,ru -option grp:caps_toggle -print | xkbcomp - $DISPLAY &
 xset r rate 240 40
 picom -b
 feh --bg-scale --no-fehbg $XDG_CONFIG_HOME/wallpapers/wall1.jpg
+
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
 exec dbus-run-session $WM
